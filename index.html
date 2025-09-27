@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PredictionMart | Trade the Future of Tech, Trade, Economics & Geopolitics</title>
+    <meta name="description" content="PredictionMart is a Singapore-based prediction market platform for trading probabilistic event contracts across technology, trade, economics, geopolitics and regional developments with a focus on India & Asia." />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Inlined Styles (from style.css) -->
+    <style>
+/* === Bundled CSS (style.css) === */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height:1.6; color:#e2e8f0; overflow-x:hidden; background:url('background.png') center 0% / cover fixed no-repeat #0f172a; will-change:background-position; position:relative; }
+body::before { content:''; position:fixed; inset:0; z-index:-1; background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), rgba(0,0,0,0.65) 70%), linear-gradient(135deg, rgba(15,23,42,0.7) 0%, rgba(30,41,59,0.85) 60%, rgba(15,23,42,0.9) 100%); pointer-events:none; }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+/* Navigation */
+.navbar { position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,0.9); backdrop-filter:blur(10px); z-index:1000; transition:all .3s ease; }
+.nav-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 20px; }
+.nav-logo h2 { color:#ff6b35; font-weight:700; font-size:1.5rem; }
+.nav-menu { display:flex; list-style:none; gap:2rem; }
+.nav-menu a { color:#fff; text-decoration:none; font-weight:500; transition:color .3s ease; }
+.nav-menu a:hover { color:#ff6b35; }
+.nav-toggle { display:none; flex-direction:column; cursor:pointer; }
+.nav-toggle span { width:25px; height:3px; background:#fff; margin:3px 0; transition:.3s; }
+/* Intro */
+.intro-section { min-height:100vh; position:relative; display:flex; align-items:center; overflow:hidden; }
+.intro-background { position:absolute; inset:-20% 0; background:linear-gradient(135deg, rgba(102,126,234,0.22) 0%, rgba(118,75,162,0.22) 100%); will-change:transform; z-index:1; pointer-events:none; }
+.intro-content { position:relative; z-index:2; text-align:center; color:#fff; width:100%; }
+.intro-title { font-size:3.5rem; font-weight:700; margin-bottom:1rem; animation:fadeInUp 1s ease; color:#f8fafc; }
+.intro-subtitle { font-size:1.3rem; margin-bottom:3rem; opacity:.95; animation:fadeInUp 1s ease .2s both; color:#dbeafe; }
+.intro-stats { display:flex; justify-content:center; gap:3rem; margin-bottom:3rem; animation:fadeInUp 1s ease .4s both; }
+.stat-number { display:block; font-size:2.5rem; font-weight:700; color:#ff6b35; }
+.intro-actions { display:flex; justify-content:center; gap:1rem; animation:fadeInUp 1s ease .6s both; }
+.btn { padding:12px 24px; border:none; border-radius:6px; font-size:1rem; font-weight:600; cursor:pointer; transition:all .3s ease; text-decoration:none; display:inline-block; }
+.btn-primary { background:#ff6b35; color:#fff; }
+.btn-primary:hover { background:#e55a2e; transform:translateY(-2px); }
+.btn-secondary { background:transparent; color:#fff; border:2px solid #fff; }
+.btn-secondary:hover { background:#fff; color:#333; }
+/* Hero */
+.hero-section { min-height:90vh; position:relative; display:flex; align-items:center; overflow:hidden; isolation:isolate; }
+.hero-parallax { position:absolute; inset:0; background:url('hero.png') center/cover no-repeat; filter:brightness(.9) saturate(1.1); will-change:transform; z-index:-1; }
+.hero-parallax::after { content:''; position:absolute; inset:0; background:linear-gradient(140deg, rgba(0,0,0,0.75) 0%, rgba(26,32,44,0.55) 45%, rgba(0,0,0,0.85) 100%); }
+.hero-content { position:relative; z-index:3; color:#fff; text-align:center; width:100%; pointer-events:none; }
+.hero-content * { pointer-events:auto; }
+.hero-text h2 { font-size:4rem; font-weight:800; margin-bottom:1.5rem; background:linear-gradient(135deg,#ff6b35 0%,#f7931e 50%,#ff6b35 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-shadow:0 4px 12px rgba(255,107,53,0.3); letter-spacing:-.02em; line-height:1.1; }
+.hero-text p { font-size:1.35rem; margin:0 auto 3rem; opacity:.97; max-width:760px; line-height:1.65; color:#e0f2fe; }
+.hero-features { display:flex; gap:2rem; }
+.feature-item { display:flex; align-items:center; gap:.5rem; }
+/* Graph Section */
+.graph-section { padding:80px 0; background:rgba(248,250,252,0.2); }
+.analytics-head-layout { display:flex; align-items:flex-start; gap:3rem; margin-bottom:2.5rem; }
+.analytics-head-left { flex:1.1; display:flex; flex-direction:column; gap:1.25rem; }
+.analytics-head-left .graph-detached-heading, .analytics-head-left .section-header { text-align:left; margin:0; }
+.section-header.tight h2 { margin-bottom:.4rem; }
+.analytics-head-video { flex:0 0 420px; max-width:420px; }
+.video-wrapper { position:relative; width:100%; }
+.video-wrapper .yt-frame { width:100%; aspect-ratio:16/9; border-radius:14px; box-shadow:0 8px 28px -8px rgba(0,0,0,0.55); }
+.video-lazy { position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:linear-gradient(135deg,#1e293b,#0f172a); display:block; cursor:pointer; box-shadow:0 8px 28px -8px rgba(0,0,0,0.55); }
+.video-thumb { position:absolute; inset:0; background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.08),rgba(0,0,0,0.75)), url('custom-thumb.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; }
+.thumb-overlay { position:absolute; inset:0; background:linear-gradient(145deg,rgba(15,23,42,0.75),rgba(15,23,42,0.15)); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.2rem; text-align:center; backdrop-filter:blur(2px); }
+.play-button { width:74px; height:74px; border-radius:50%; background:radial-gradient(circle at 30% 30%,#ff8a4a,#ff6b35); position:relative; box-shadow:0 6px 18px -4px rgba(255,107,53,0.55); transition:transform .35s ease, box-shadow .35s ease; }
+.play-button::after { content:''; position:absolute; top:50%; left:50%; transform:translate(-40%,-50%); width:0; height:0; border-top:14px solid transparent; border-bottom:14px solid transparent; border-left:22px solid #fff; }
+.video-lazy:hover .play-button { transform:scale(1.08); box-shadow:0 8px 26px -6px rgba(255,107,53,0.7); }
+.thumb-text { margin-top:1.1rem; }
+.thumb-text h4 { font-size:1.05rem; font-weight:600; letter-spacing:.5px; color:#f1f5f9; margin-bottom:.45rem; }
+.thumb-text p { font-size:.72rem; line-height:1.35; color:#cbd5e1; max-width:260px; margin:0 auto; }
+.video-note { display:block; font-size:.65rem; text-transform:uppercase; letter-spacing:.75px; margin-top:.5rem; color:#94a3b8; }
+@media (max-width:1024px){ .analytics-head-layout { flex-direction:column; } .analytics-head-video { width:100%; max-width:100%; } }
+.graph-detached-heading { text-align:center; margin:0 auto 2.5rem; max-width:840px; }
+.graph-detached-heading h2 { font-size:2.2rem; font-weight:700; letter-spacing:.5px; background:linear-gradient(135deg,#f8fafc 0%,#cbd5e1 60%,#f8fafc 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.75rem; }
+.graph-detached-heading .graph-detached-sub { font-size:.95rem; color:#cbd5e1; opacity:.9; letter-spacing:.4px; }
+.graph-inline-title { position:absolute; top:10px; left:50%; transform:translateX(-50%); font-size:1.05rem; font-weight:600; letter-spacing:.5px; padding:6px 14px 7px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:30px; color:#f1f5f9; backdrop-filter:blur(4px); box-shadow:0 4px 12px -6px rgba(0,0,0,0.4); pointer-events:none; }
+.scrub-scroll { position:relative; width:100%; height:1000px; margin-bottom:1rem; }
+.scrub-sticky { position:sticky; top:100px; height:400px; display:flex; align-items:center; justify-content:center; }
+.section-header { text-align:center; margin-bottom:3rem; }
+.section-header h2 { font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:#f1f5f9; letter-spacing:.5px; }
+.section-header p { font-size:1.05rem; color:#cbd5e1; max-width:640px; margin:0 auto; }
+.graph-container { background:rgba(255,255,255,0.15); border-radius:20px; padding:2.2rem 2.4rem; box-shadow:0 10px 30px -10px rgba(0,0,0,0.35); margin-bottom:2.5rem; border:1px solid rgba(255,255,255,0.28); position:relative; }
+.graph-placeholder { width:100%; height:400px; background:linear-gradient(180deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.85) 100%); border-radius:14px; margin-bottom:.5rem; position:relative; border:1px solid rgba(255,255,255,0.18); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05), 0 4px 18px -6px rgba(0,0,0,0.6); overflow:hidden; }
+.graph-placeholder::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0)); mix-blend-mode:overlay; }
+#marketChart { display:block; width:100%; height:100%; }
+.scrub-bubble { position:absolute; min-width:240px; max-width:300px; background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.25); padding:14px 16px 16px; border-radius:14px; font-size:.85rem; line-height:1.3; color:#f1f5f9; box-shadow:0 10px 25px -8px rgba(0,0,0,0.6); opacity:0; transform:translate(-50%,10px) scale(.92); transition:opacity .5s ease, transform .55s cubic-bezier(.19,1,.22,1); pointer-events:none; }
+.scrub-bubble.visible { opacity:1; transform:translate(-50%,0) scale(1); }
+.bubble-one, .bubble-two { left:55%; bottom:18px; }
+.scrub-bubble .bubble-arrow { position:absolute; left:50%; bottom:-10px; width:0; height:0; transform:translateX(-50%); border-left:10px solid transparent; border-right:10px solid transparent; border-top:10px solid rgba(15,23,42,0.85); }
+.scrub-bubble .bubble-text { font-weight:500; letter-spacing:.25px; }
+.market-insights { background:rgba(255,255,255,0.2); border-radius:16px; padding:2rem; box-shadow:0 4px 10px -2px rgba(0,0,0,0.15); border:1px solid rgba(255,255,255,0.25); }
+.insight-card h3 { font-size:1.25rem; font-weight:600; margin-bottom:1rem; color:#f8fafc; }
+.market-list { list-style:none; }
+.market-list li { display:flex; justify-content:space-between; align-items:center; padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.12); color:#e2e8f0; }
+.price-change { font-weight:600; padding:4px 8px; border-radius:4px; font-size:.9rem; }
+.price-change.up { background:rgba(16,185,129,0.18); color:#34d399; }
+.price-change.down { background:rgba(239,68,68,0.18); color:#f87171; }
+/* Markets Section */
+.markets-section { padding:70px 0 60px; background:linear-gradient(160deg, rgba(15,23,42,0.65) 0%, rgba(30,41,59,0.85) 70%, rgba(15,23,42,0.95) 100%); position:relative; }
+.markets-section .section-header.mini h2 { font-size:2.1rem; }
+.markets-grid { margin-top:2.2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.8rem; }
+.market-card { background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.25); border-radius:18px; padding:1.4rem 1.35rem 1.5rem; position:relative; overflow:hidden; box-shadow:0 10px 25px -12px rgba(0,0,0,0.55); backdrop-filter:blur(6px); transition:transform .35s ease, box-shadow .35s ease; }
+.market-card::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 75% 15%, rgba(255,255,255,0.18), transparent 55%); mix-blend-mode:overlay; pointer-events:none; }
+.market-card:hover { transform:translateY(-6px); box-shadow:0 18px 40px -18px rgba(0,0,0,0.7); }
+.market-card h3 { font-size:1.1rem; font-weight:600; margin-bottom:.35rem; color:#f8fafc; letter-spacing:.3px; }
+.market-sub { font-size:.75rem; text-transform:uppercase; letter-spacing:1.5px; color:#94a3b8; margin-bottom:.8rem; font-weight:600; }
+.price-line { list-style:none; display:flex; flex-direction:column; gap:.55rem; }
+.price-line.compact li { font-size:.8rem; }
+.price-line li { display:flex; justify-content:space-between; align-items:center; font-size:.85rem; font-weight:500; color:#e2e8f0; background:rgba(15,23,42,0.4); padding:.55rem .65rem; border-radius:10px; }
+.odds-chip { background:rgba(255,255,255,0.12); border-radius:30px; padding:.25rem .65rem; font-size:.7rem; font-weight:600; color:#f1f5f9; letter-spacing:.5px; }
+.odds-chip.up { background:rgba(16,185,129,0.3); color:#34d399; }
+.odds-chip.down { background:rgba(239,68,68,0.3); color:#f87171; }
+.inline-odds { display:flex; gap:1rem; }
+.inline-odds.spread { flex-direction:column; gap:.55rem; }
+.inline-odds .side { flex:1; background:rgba(15,23,42,0.45); border:1px solid rgba(255,255,255,0.15); padding:.75rem .85rem; border-radius:12px; display:flex; justify-content:space-between; align-items:center; }
+.inline-odds .label { font-size:.75rem; font-weight:600; letter-spacing:.5px; color:#cbd5e1; }
+.inline-odds .price { font-size:.9rem; font-weight:600; color:#f8fafc; }
+.micro-note { display:block; margin-top:.7rem; font-size:.65rem; letter-spacing:1px; color:#94a3b8; text-transform:uppercase; font-weight:600; }
+/* Events */
+.events-section { padding:80px 0; background:linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(59,130,246,0.28) 100%); color:#fff; }
+.events-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-top:3rem; }
+.event-bubble { background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:2rem; text-align:center; cursor:pointer; transition:all .3s ease; animation:float 3s ease-in-out infinite; }
+.event-bubble:nth-child(2){ animation-delay:-1s; }
+.event-bubble:nth-child(3){ animation-delay:-2s; }
+.event-bubble:hover { transform:translateY(-10px) scale(1.05); background:rgba(255,255,255,0.2); }
+.bubble-content h3 { font-size:1.2rem; font-weight:600; margin-bottom:.5rem; color:#ff6b35; }
+.bubble-content p { margin-bottom:1rem; opacity:.9; }
+.odds { font-size:.9rem; font-weight:500; background:rgba(255,107,53,0.2); padding:.5rem; border-radius:8px; }
+/* Widgets */
+.widgets-section { padding:80px 0; background:rgba(255,255,255,0.2); }
+.widgets-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-top:3rem; }
+.widget-card { background:rgba(255,255,255,0.2); border-radius:18px; padding:2rem; text-align:center; transition:all .35s ease; border:1px solid rgba(255,255,255,0.25); }
+.widget-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+.widget-card h3 { font-size:1.25rem; font-weight:600; margin-bottom:1rem; color:#f1f5f9; }
+.widget-card p { color:#cbd5e1; margin-bottom:1.5rem; line-height:1.55; }
+.widget-desc { font-size:.8rem; margin-top:-.25rem; margin-bottom:1rem; opacity:.85; letter-spacing:.3px; }
+.market-sim-card .sim-chart-wrapper { background:rgba(15,23,42,0.55); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:8px; margin-bottom:.9rem; }
+.market-sim-card canvas { display:block; width:100%; height:140px; max-width:100%; }
+.sim-controls { display:flex; gap:.6rem; margin-bottom:.4rem; }
+.widget-btn { background:#ff6b35; color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:600; cursor:pointer; transition:all .3s ease; }
+.widget-btn:hover { background:#e55a2e; transform:translateY(-2px); }
+.widget-btn.small { padding:8px 14px; font-size:.75rem; }
+.widget-btn.alt { background:rgba(255,255,255,0.15); color:#f1f5f9; }
+.widget-btn.alt:hover { background:rgba(255,255,255,0.25); }
+.sim-status { display:block; margin-top:.4rem; font-size:.6rem; letter-spacing:1px; opacity:.75; }
+.payoff-card form { display:flex; flex-direction:column; gap:.85rem; margin-bottom:1rem; }
+.form-row { display:flex; flex-direction:column; gap:.35rem; }
+.form-row label { font-size:.7rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#94a3b8; }
+.form-row input { background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:10px 12px; color:#f1f5f9; font-size:.85rem; }
+.form-row input:focus { outline:2px solid #ff6b35; outline-offset:1px; }
+.form-actions { display:flex; gap:.6rem; }
+.payoff-result { background:rgba(15,23,42,0.55); border:1px solid rgba(255,255,255,0.18); border-radius:10px; padding:.9rem 1rem; font-size:.8rem; min-height:48px; display:flex; align-items:center; }
+.payoff-result .placeholder { opacity:.55; }
+.payoff-result .payout-line { font-weight:600; color:#f8fafc; }
+.payoff-result .roi-line { margin-top:.35rem; font-size:.7rem; color:#94a3b8; display:block; }
+.odds-vis-card .odds-slider-wrap { margin-bottom:1rem; }
+#oddsSlider { width:100%; appearance:none; height:6px; border-radius:4px; background:linear-gradient(90deg,#ff6b35,var(--slider-mid,#ff924f)); outline:none; cursor:pointer; }
+#oddsSlider::-webkit-slider-thumb { appearance:none; width:18px; height:18px; background:#fff; border-radius:50%; border:2px solid #ff6b35; box-shadow:0 2px 6px rgba(0,0,0,0.4); }
+#oddsSlider::-moz-range-thumb { width:18px; height:18px; background:#fff; border-radius:50%; border:2px solid #ff6b35; box-shadow:0 2px 6px rgba(0,0,0,0.4); }
+.odds-scale { display:flex; justify-content:space-between; font-size:.55rem; text-transform:uppercase; letter-spacing:1px; color:#94a3b8; margin-top:.35rem; }
+.odds-output { display:flex; justify-content:space-between; font-size:.75rem; margin-bottom:.5rem; }
+.odds-output strong { font-weight:600; color:#f8fafc; }
+.micro-note.muted { opacity:.55; }
+/* Footer */
+.footer-section { position:relative; background:rgba(26,32,44,0.6); color:#fff; padding:60px 0 20px; }
+.footer-background { position:absolute; inset:0; background:url('footer.png') center/cover no-repeat; opacity:.2; z-index:1; mix-blend-mode:overlay; }
+.footer-content { position:relative; z-index:2; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem; }
+.footer-brand h3 { font-size:1.6rem; margin-bottom:1rem; font-weight:700; color:#ff6b35; }
+.footer-brand p { font-size:.85rem; line-height:1.55; opacity:.85; max-width:460px; }
+.social-links { display:flex; gap:.75rem; margin-top:1rem; }
+.social-links a { width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.12); color:#fff; border-radius:10px; text-decoration:none; font-size:1.1rem; transition:all .3s ease; }
+.social-links a:hover { background:#ff6b35; transform:translateY(-2px); }
+.footer-links { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.link-group h4 { color:#ff6b35; margin-bottom:1rem; font-weight:600; }
+.link-group ul { list-style:none; }
+.link-group li { margin-bottom:.5rem; }
+.link-group a { color:rgba(255,255,255,0.78); text-decoration:none; transition:color .25s ease; }
+.link-group a:hover { color:#fff; }
+.footer-bottom { position:relative; z-index:2; text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); opacity:.7; }
+/* Animations */
+@keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to { opacity:1; transform:translateY(0);} }
+@keyframes float { 0%,100% { transform:translateY(0);} 50% { transform:translateY(-10px);} }
+/* Responsive tweaks */
+@media (max-width:768px){ .nav-menu { display:none; } .nav-toggle { display:flex; } .intro-title { font-size:2.5rem; } .intro-stats { flex-direction:column; gap:1.5rem; } .intro-actions { flex-direction:column; } .hero-text h2 { font-size:2.8rem; } .section-header h2 { font-size:2rem; } .markets-grid { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); } .widgets-grid { grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><h2>PredictionMart</h2></div>
+            <ul class="nav-menu">
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#markets">Markets</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#widgets">Tools</a></li>
+            </ul>
+            <div class="nav-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section id="intro" class="intro-section">
+        <div class="intro-background"></div>
+        <div class="intro-content"><div class="container">
+            <h1 class="intro-title">PredictionMart</h1>
+            <p class="intro-subtitle">Tokenized probability markets for real-world outcomes in tech, trade, economics & geopolitics — priced by collective intelligence.</p>
+            <div class="intro-stats">
+                <div class="stat-item"><span class="stat-number" data-target="50000">0</span><span class="stat-label">Active Traders</span></div>
+                <div class="stat-item"><span class="stat-number" data-target="2500">0</span><span class="stat-label">Markets Created</span></div>
+                <div class="stat-item"><span class="stat-number" data-target="15">0</span><span class="stat-label">Million Volume</span></div>
+            </div>
+            <div class="intro-actions"><button class="btn btn-primary">Start Trading</button><button class="btn btn-secondary">View Markets</button></div>
+        </div></div>
+    </section>
+
+    <section id="hero" class="hero-section"><div class="hero-parallax"></div><div class="hero-content"><div class="container"><div class="hero-text"><h2>Trade Probabilities</h2><p>We provide regulated, liquid markets on verifiable future events. Deploy insight before headlines land: from semiconductor export shifts to macro rate decisions, tech launches, policy changes and major sporting catalysts.</p><div class="hero-features"><div class="feature-item"><div class="feature-icon">📊</div><span>Real-time Odds</span></div><div class="feature-item"><div class="feature-icon">🏏</div><span>Live Markets</span></div><div class="feature-item"><div class="feature-icon">💰</div><span>Instant Payouts</span></div></div></div></div></div></section>
+
+    <section id="analytics" class="graph-section"><div class="container">
+        <div class="analytics-head-layout">
+            <div class="analytics-head-left">
+                <div class="graph-detached-heading"><h2>How does prediction market operate?</h2><p class="graph-detached-sub">Scroll to see how market-implied probability evolves with events</p></div>
+                <div class="section-header tight"><h2>Market Analytics</h2><p>Visualize evolving implied probabilities and liquidity dynamics across live event contracts.</p></div>
+            </div>
+            <div class="analytics-head-video"><div class="video-wrapper">
+                <div class="video-lazy" data-video-id="dQw4w9WgXcQ" data-embed-url="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1">
+                    <div class="video-thumb" id="customVideoThumb"><div class="thumb-overlay"><div class="play-button" aria-label="Play explainer video"></div><div class="thumb-text"><h4>Prediction Market Explainer</h4><p>Discover how contracts price future outcomes in real time.</p></div></div></div>
+                </div>
+                <small class="video-note">Click to play the explainer.</small>
+            </div></div>
+        </div>
+        <div class="graph-container">
+            <div class="scrub-scroll" data-scroll-length="6000"><div class="scrub-sticky"><div class="graph-placeholder">
+                <div class="graph-inline-title">MI winning IPL</div>
+                <canvas id="marketChart" width="800" height="400"></canvas>
+                <div class="scrub-bubble bubble-one" aria-live="polite" data-full-text="MI qualified P2 after winning final league match, boosting implied title probability and increasing contract price (reducing payout ratio)."><div class="bubble-arrow"></div><div class="bubble-text"></div></div>
+                <div class="scrub-bubble bubble-two" aria-live="polite" data-full-text="MI lost Qualifier 1 to CSK; probability compresses lower, contract reprices down (payout ratio increases for new buyers)."><div class="bubble-arrow"></div><div class="bubble-text"></div></div>
+            </div></div></div>
+        </div>
+        <div class="market-insights"><div class="insight-card"><h3>Today's Hot Markets</h3><ul class="market-list"><li>CSK vs MI - Match Winner <span class="price-change up">+5.2%</span></li><li>Virat Kohli - Top Scorer <span class="price-change down">-2.1%</span></li><li>RCB vs KKR - Total Runs Over 180 <span class="price-change up">+8.5%</span></li></ul></div></div>
+    </div></section>
+
+    <section id="markets" class="markets-section"><div class="container"><div class="section-header mini"><h2>Active & Featured Markets</h2><p>Explore current outright, match, and player performance contracts</p></div><div class="markets-grid">
+        <div class="market-card"><h3>IPL 2025 Winner</h3><p class="market-sub">Outright Championship</p><ul class="price-line"><li><span>MI</span><span class="odds-chip up">0.65</span></li><li><span>CSK</span><span class="odds-chip">0.58</span></li><li><span>RCB</span><span class="odds-chip">0.44</span></li><li><span>KKR</span><span class="odds-chip down">0.39</span></li></ul></div>
+        <div class="market-card"><h3>Next Match Winner</h3><p class="market-sub">CSK vs MI</p><div class="inline-odds"><div class="side"><span class="label">CSK</span><span class="price">1.85</span></div><div class="side"><span class="label">MI</span><span class="price">2.10</span></div></div><small class="micro-note">Last move: MI price tightened 2.18 → 2.10</small></div>
+        <div class="market-card"><h3>Top Batter (Match)</h3><p class="market-sub">Projected Runs Leader</p><ul class="price-line compact"><li><span>Virat</span><span class="odds-chip">3.2</span></li><li><span>Rohit</span><span class="odds-chip up">3.9</span></li><li><span>Conway</span><span class="odds-chip">4.1</span></li><li><span>Gaikwad</span><span class="odds-chip down">4.4</span></li></ul></div>
+        <div class="market-card"><h3>Runs Over/Under</h3><p class="market-sub">CSK vs MI Total 1st Inns</p><div class="inline-odds spread"><div class="side"><span class="label">Over 180.5</span><span class="price">1.95</span></div><div class="side"><span class="label">Under 180.5</span><span class="price">1.90</span></div></div><small class="micro-note">Implied total: 179.8</small></div>
+    </div></div></section>
+
+    <section id="events" class="events-section"><div class="container"><div class="section-header"><h2>Live Events & Markets</h2><p>Interactive prediction markets for ongoing and upcoming IPL events</p></div><div class="events-container">
+        <div class="event-bubble" data-event="match1"><div class="bubble-content"><h3>CSK vs MI</h3><p>Match Winner</p><div class="odds">CSK 1.85 | MI 2.10</div></div></div>
+        <div class="event-bubble" data-event="match2"><div class="bubble-content"><h3>RCB vs KKR</h3><p>Total Runs O/U 180</p><div class="odds">Over 1.95 | Under 1.90</div></div></div>
+        <div class="event-bubble" data-event="player1"><div class="bubble-content"><h3>Virat Kohli</h3><p>Top Scorer Today</p><div class="odds">Yes 3.20 | No 1.35</div></div></div>
+        <div class="event-bubble" data-event="season"><div class="bubble-content"><h3>IPL 2025</h3><p>Tournament Winner</p><div class="odds">MI 4.50 | CSK 5.20</div></div></div>
+        <div class="event-bubble" data-event="special"><div class="bubble-content"><h3>Special Bets</h3><p>Hat-trick Today</p><div class="odds">Yes 25.0 | No 1.04</div></div></div>
+    </div></div></section>
+
+    <section id="widgets" class="widgets-section"><div class="container"><div class="section-header"><h2>Trading Tools & Widgets</h2><p>Advanced tools to enhance your prediction trading experience</p></div><div class="widgets-grid">
+        <div class="widget-card market-sim-card"><h3>Market Simulator</h3><p class="widget-desc">Simulated real-time contract price stream (random walk). Add ticks to see movement.</p><div class="sim-chart-wrapper"><canvas id="marketSimCanvas" width="320" height="140" aria-label="Simulated market price chart"></canvas></div><div class="sim-controls"><button id="simAddPoint" class="widget-btn small">Add Tick</button><button id="simAutoToggle" class="widget-btn alt small" data-running="false">Auto: Off</button></div><small id="simStatus" class="micro-note sim-status">Last update: –</small></div>
+        <div class="widget-card payoff-card"><h3>Payoff Calculator</h3><p class="widget-desc">Estimate potential payout if your prediction resolves TRUE.</p><form id="payoffForm" autocomplete="off" onsubmit="return false;"><div class="form-row"><label for="payoffPrice">Price / Share (0–1)</label><input type="number" id="payoffPrice" step="0.01" min="0.01" max="0.99" placeholder="0.60" /></div><div class="form-row"><label for="payoffInvestment">Investment Amount (₹)</label><input type="number" id="payoffInvestment" step="1" min="1" placeholder="600" /></div><div class="form-actions"><button id="payoffCalcBtn" class="widget-btn" type="button">Calculate</button><button id="payoffClearBtn" class="widget-btn alt" type="button">Clear</button></div></form><div id="payoffResult" class="payoff-result" aria-live="polite"><span class="placeholder">Enter values to see payout.</span></div></div>
+        <div class="widget-card odds-vis-card"><h3>Event Odds Visualizer</h3><p class="widget-desc">Map probability (%) to an indicative live contract share price.</p><div class="odds-slider-wrap"><input type="range" id="oddsSlider" min="0" max="100" value="30" /><div class="odds-scale"><span>0%</span><span>50%</span><span>100%</span></div></div><div class="odds-output"><div><strong>Probability:</strong> <span id="oddsProbVal">30%</span></div><div><strong>Share Price:</strong> <span id="oddsPriceVal">0.30</span></div></div><small class="micro-note muted">Illustrative only. Prices reflect current market consensus.</small></div>
+    </div></div></section>
+
+    <footer class="footer-section"><div class="footer-background"></div><div class="container"><div class="footer-content"><div class="footer-brand"><h3>PredictionMart</h3><p>Singapore-based gateway to permissioned prediction markets across Asia. Transparent pricing, audited resolution, and institution-grade infrastructure for probabilistic trading.</p><div class="social-links"><a href="#" aria-label="Twitter">📱</a><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Telegram">💬</a></div></div><div class="footer-links"><div class="link-group"><h4>Markets</h4><ul><li><a href="#">Match Winners</a></li><li><a href="#">Player Performance</a></li><li><a href="#">Season Predictions</a></li><li><a href="#">Special Bets</a></li></ul></div><div class="link-group"><h4>Tools</h4><ul><li><a href="#">Price Calculator</a></li><li><a href="#">Market Analysis</a></li><li><a href="#">Trading Guides</a></li><li><a href="#">API Access</a></li></ul></div><div class="link-group"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div></div><div class="footer-bottom"><p>&copy; 2025 PredictionMart. All rights reserved. | Responsible Trading | 18+</p></div></div></footer>
+
+    <!-- Inlined Script (from script.js, with minor bundling adjustments) -->
+    <script>
+// === Bundled JS (script.js) ===
+document.addEventListener('DOMContentLoaded', function(){ initializeApp(); });
+let parallaxController;
+function initializeApp(){ initNavigation(); initScrollAnimations(); parallaxController = initParallax(); initGlobalBackgroundScroll(); initCounters(); initChart(); initEventBubbles(); initWidgets(); initChartScrub(); initMarketSimulator(); initPayoffCalculator(); initOddsVisualizer(); initAnalyticsVideo(); }
+function initNavigation(){ const navbar=document.querySelector('.navbar'); const navToggle=document.querySelector('.nav-toggle'); const navMenu=document.querySelector('.nav-menu'); window.addEventListener('scroll',()=>{ navbar.style.background= window.scrollY>100 ? 'rgba(0, 0, 0, 0.95)' : 'rgba(0, 0, 0, 0.9)';}); if(navToggle && navMenu){ navToggle.addEventListener('click',()=>{ navMenu.classList.toggle('active'); navToggle.classList.toggle('active'); }); } document.querySelectorAll('.nav-menu a').forEach(link=>{ link.addEventListener('click',e=>{ e.preventDefault(); const targetId=link.getAttribute('href'); const target=document.querySelector(targetId); if(target){ const offsetTop=target.offsetTop-80; window.scrollTo({ top:offsetTop, behavior:'smooth' }); } }); }); }
+function initScrollAnimations(){ const observer=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.style.opacity='1'; entry.target.style.transform='translateY(0)'; } }); }, { threshold:0.1, rootMargin:'0px 0px -50px 0px' }); document.querySelectorAll('.widget-card, .insight-card, .event-bubble').forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='all 0.6s ease'; observer.observe(el); }); }
+function initParallax(){ const elements=[ {element:document.querySelector('.intro-background'), speed:0.4},{element:document.querySelector('.hero-parallax'), speed:0.6}].filter(i=>i.element); let ticking=false; function update(){ const scrollY=window.pageYOffset; elements.forEach(({element,speed})=>{ const section=element.closest('section'); if(!section) return; const rect=section.getBoundingClientRect(); const sectionTop=rect.top+scrollY; const h=rect.height; const winH=window.innerHeight; if(sectionTop < scrollY + winH && sectionTop + h > scrollY){ const rel=scrollY - sectionTop; let y=rel*speed; const maxShift=h*0.25; if(y>maxShift) y=maxShift; if(y<-maxShift) y=-maxShift; element.style.transform=`translate3d(0, ${y}px, 0)`; } }); ticking=false; } function req(){ if(!ticking){ requestAnimationFrame(update); ticking=true; }} window.addEventListener('scroll', req, {passive:true}); window.addEventListener('resize', ()=>{ update(); }, {passive:true}); update(); return { addElement:(s,sp)=>{ const el=document.querySelector(s); if(el) elements.push({element:el,speed:sp}); } }; }
+function initGlobalBackgroundScroll(){ const body=document.body; const maxShiftPercent=parseFloat(body.getAttribute('data-bg-shift'))||35; let scrollable=0; function recalc(){ const docHeight=Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); scrollable=docHeight - window.innerHeight; if(scrollable<0) scrollable=0; } function apply(){ if(scrollable===0){ body.style.backgroundPosition='center 0%'; return; } const progress=window.pageYOffset/scrollable; const yPercent=progress*maxShiftPercent; body.style.backgroundPosition=`center ${yPercent}%`; } window.addEventListener('scroll', apply, {passive:true}); window.addEventListener('resize', ()=>{ recalc(); apply(); }, {passive:true}); recalc(); apply(); }
+function initCounters(){ const counters=document.querySelectorAll('.stat-number'); const speed=2000; const observer=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ const counter=entry.target; const target=parseInt(counter.getAttribute('data-target')); const increment=target/(speed/16); let current=0; const step=()=>{ if(current<target){ current+=increment; counter.textContent=Math.ceil(current).toLocaleString(); requestAnimationFrame(step);} else { counter.textContent=target.toLocaleString(); } }; step(); observer.unobserve(counter); } }); }); counters.forEach(c=>observer.observe(c)); }
+function initChart(){ const canvas=document.getElementById('marketChart'); if(!canvas) return; canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; }
+const SCRUB_SPEC={ totalScroll:6000, holds:[], segments:[ {start:0,end:900,from:0.30,to:0.32,jitter:0.01}, {start:900,end:1320,from:0.32,to:0.65,ease:'easeInOut'}, {start:1320,end:2400,from:0.65,to:0.63,jitter:0.012}, {start:2400,end:4200,from:0.63,to:0.58,jitter:0.015}, {start:4200,end:4500,from:0.58,to:0.40,ease:'easeInOut'}, {start:4500,end:6000,from:0.40,to:0.42,jitter:0.01} ]};
+function narrativeValueAt(scroll){ const s=SCRUB_SPEC.segments.find(seg=>scroll>=seg.start && scroll<=seg.end)||SCRUB_SPEC.segments.at(-1); const span=(s.end - s.start)||1; const tRaw=(scroll - s.start)/span; let t=tRaw; if(s.ease==='easeOut') t=1-Math.pow(1-tRaw,3); if(s.ease==='easeIn') t=Math.pow(tRaw,3); if(s.ease==='easeInOut') t=tRaw<0.5?4*tRaw*tRaw*tRaw:1-Math.pow(-2*tRaw+2,3)/2; let val=s.from+(s.to-s.from)*t; if(s.jitter){ const j=Math.sin((scroll-s.start)*0.045)*s.jitter + Math.sin(scroll*0.011)*s.jitter*0.6; val+=j; } return Math.min(1, Math.max(0,val)); }
+const SCRUB_POINTS=140; let SCRUB_DATA=Array.from({length:SCRUB_POINTS},(_,i)=>{ const scroll=(i/(SCRUB_POINTS-1))*SCRUB_SPEC.totalScroll; return {x:i,y:narrativeValueAt(scroll)}; });
+function drawScrubChart(ctx,progress){ const data=SCRUB_DATA; const {width,height}=ctx.canvas; ctx.clearRect(0,0,width,height); if(!data.length) return; const maxIndex=(data.length-1)*progress; const lastFull=Math.floor(maxIndex); const partial=maxIndex-lastFull; const padL=70,padR=24,padT=50,padB=50; const innerW=width-padL-padR; const innerH=height-padT-padB; const xScale=innerW/(data.length-1); const ticks=[0,0.25,0.5,0.75,1]; ctx.font='12px Inter, sans-serif'; ctx.textAlign='right'; ctx.textBaseline='middle'; ctx.fillStyle='#94a3b8'; ctx.strokeStyle='rgba(148,163,184,0.25)'; ctx.lineWidth=1; ticks.forEach(t=>{ const y=padT+innerH - t*innerH; ctx.beginPath(); ctx.moveTo(padL-5,y+0.5); ctx.lineTo(width-padR,y+0.5); ctx.stroke(); ctx.fillText(t===0?'0':t.toFixed(2).replace(/0+$/,'').replace(/\.$/,''), padL-10,y); }); ctx.strokeStyle='rgba(148,163,184,0.55)'; ctx.lineWidth=1.2; ctx.beginPath(); ctx.moveTo(padL-5,padT-4); ctx.lineTo(padL-5,height-padB+4); ctx.stroke(); ctx.beginPath(); ctx.moveTo(padL,padT+innerH); for(let i=0;i<=lastFull;i++){ const v=data[i].y; const x=padL+i*xScale; const y=padT+innerH - v*innerH; ctx.lineTo(x,y);} if(lastFull < data.length-1){ const a=data[lastFull].y; const b=data[lastFull+1].y; const interp=a+(b-a)*partial; const x=padL+(lastFull+partial)*xScale; const y=padT+innerH - interp*innerH; ctx.lineTo(x,y); ctx.lineTo(x,padT+innerH);} else { ctx.lineTo(padL+innerW,padT+innerH);} ctx.closePath(); const grad=ctx.createLinearGradient(0,0,0,height); grad.addColorStop(0,'rgba(255,107,53,0.35)'); grad.addColorStop(1,'rgba(255,107,53,0.05)'); ctx.fillStyle=grad; ctx.fill(); ctx.beginPath(); ctx.strokeStyle='#ff6b35'; ctx.lineWidth=3; for(let i=0;i<=lastFull;i++){ const v=data[i].y; const x=padL+i*xScale; const y=padT+innerH - v*innerH; if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);} if(lastFull < data.length-1){ const a=data[lastFull].y; const b=data[lastFull+1].y; const interp=a+(b-a)*partial; const x=padL+(lastFull+partial)*xScale; const y=padT+innerH - interp*innerH; ctx.lineTo(x,y);} ctx.stroke(); }
+function initChartScrub(){ const canvas=document.getElementById('marketChart'); if(!canvas) return; const ctx=canvas.getContext('2d'); const scrubContainer=document.querySelector('.scrub-scroll'); if(!scrubContainer) return; const targetScroll=SCRUB_SPEC.totalScroll; scrubContainer.setAttribute('data-scroll-length', targetScroll); scrubContainer.style.height=targetScroll+'px'; const bubble1=document.querySelector('.scrub-bubble.bubble-one'); const bubble2=document.querySelector('.scrub-bubble.bubble-two'); const bubble1Text=bubble1?.querySelector('.bubble-text'); const bubble2Text=bubble2?.querySelector('.bubble-text'); const bubble1Full=bubble1?.getAttribute('data-full-text')||''; const bubble2Full=bubble2?.getAttribute('data-full-text')||''; function typeBubble(el,full,ratio){ if(!el) return; const len=Math.floor(full.length*ratio); el.textContent=full.slice(0,len); } let rafPending=false; function computeProgress(){ const rect=scrubContainer.getBoundingClientRect(); const viewportH=window.innerHeight; const containerTopAbs=window.scrollY + rect.top; const start=containerTopAbs - viewportH + 200; const raw=Math.min(Math.max(window.scrollY - start,0), targetScroll); return raw/targetScroll; } function update(){ rafPending=false; const p=computeProgress(); const scrollPos=p*SCRUB_SPEC.totalScroll; drawScrubChart(ctx,p); if(bubble1){ if(scrollPos>=1320 && scrollPos<=1900){ bubble1.classList.add('visible'); typeBubble(bubble1Text, bubble1Full, (scrollPos-1320)/(1900-1320)); } else if(scrollPos<1200 || scrollPos>2050){ bubble1.classList.remove('visible'); if(bubble1Text) bubble1Text.textContent=''; }} if(bubble2){ if(scrollPos>=4500 && scrollPos<=5200){ bubble2.classList.add('visible'); typeBubble(bubble2Text, bubble2Full, (scrollPos-4500)/(5200-4500)); } else if(scrollPos<4350 || scrollPos>5400){ bubble2.classList.remove('visible'); if(bubble2Text) bubble2Text.textContent=''; }} } function onScroll(){ if(!rafPending){ rafPending=true; requestAnimationFrame(update); } } window.addEventListener('scroll', onScroll, {passive:true}); window.addEventListener('resize', ()=>{ canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; onScroll(); }, {passive:true}); canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; SCRUB_DATA=Array.from({length:SCRUB_POINTS},(_,i)=>{ const scroll=(i/(SCRUB_POINTS-1))*SCRUB_SPEC.totalScroll; return {x:i,y:narrativeValueAt(scroll)}; }); drawScrubChart(ctx,0); }
+function initEventBubbles(){ document.querySelectorAll('.event-bubble').forEach(bubble=>{ bubble.addEventListener('click',()=>{ const eventType=bubble.getAttribute('data-event'); handleEventClick(eventType,bubble); }); bubble.addEventListener('mouseenter',()=>{ bubble.style.transform='translateY(-10px) scale(1.05)'; }); bubble.addEventListener('mouseleave',()=>{ bubble.style.transform='translateY(0) scale(1)'; }); }); setInterval(updateOdds,5000); }
+function handleEventClick(eventType){ const overlay=document.createElement('div'); overlay.style.cssText=`position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center;z-index:10000;opacity:0;transition:opacity .3s ease;`; const modal=document.createElement('div'); modal.style.cssText=`background:#fff;padding:2rem;border-radius:12px;max-width:400px;width:90%;text-align:center;transform:scale(.8);transition:transform .3s ease;`; modal.innerHTML=`<h3 style="margin-bottom:.75rem;color:#1a202c;">Market Details</h3><p style="margin-bottom:1.5rem;color:#64748b;font-size:.9rem;line-height:1.4;">Preview contract: <strong>${eventType||'event'}</strong>. This is a demo interaction layer.</p><div style='display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;'><button data-action="place" style="background:#ff6b35;color:#fff;border:none;padding:12px 22px;border-radius:6px;cursor:pointer;font-weight:600;">Place Bet</button><button data-action="cancel" style="background:#e2e8f0;color:#475569;border:none;padding:12px 22px;border-radius:6px;cursor:pointer;font-weight:600;">Cancel</button></div><div class='modal-message' style='margin-top:1rem;font-size:.8rem;min-height:20px;color:#475569;'></div>`; overlay.appendChild(modal); document.body.appendChild(overlay); function close(){ overlay.style.opacity='0'; modal.style.transform='scale(0.9)'; setTimeout(()=>overlay.remove(),250);} overlay.addEventListener('click',e=>{ if(e.target===overlay) close(); }); const placeBtn=modal.querySelector('button[data-action="place"]'); const cancelBtn=modal.querySelector('button[data-action="cancel"]'); const msg=modal.querySelector('.modal-message'); cancelBtn.addEventListener('click',close); placeBtn.addEventListener('click',()=>{ placeBtn.disabled=true; cancelBtn.disabled=true; placeBtn.textContent='Submitting...'; setTimeout(()=>{ placeBtn.textContent='Place Bet'; msg.style.color='#dc2626'; msg.textContent='Something went wrong. Please try again later.'; setTimeout(close,1400); },800); }); function onKey(e){ if(e.key==='Escape'){ close(); window.removeEventListener('keydown',onKey);} } window.addEventListener('keydown',onKey); requestAnimationFrame(()=>{ overlay.style.opacity='1'; modal.style.transform='scale(1)'; }); }
+function updateOdds(){ document.querySelectorAll('.odds').forEach(el=>{ el.style.background='rgba(255,107,53,0.4)'; setTimeout(()=>{ el.style.background='rgba(255,107,53,0.2)'; },200); }); }
+function initWidgets(){ document.querySelectorAll('.widget-btn').forEach(btn=>{ btn.addEventListener('click',function(){ const widgetCard=this.closest('.widget-card'); const widgetTitle=widgetCard.querySelector('h3').textContent; this.textContent='Loading...'; this.disabled=true; setTimeout(()=>{ this.textContent='Launched!'; this.style.background='#10b981'; setTimeout(()=>{ this.textContent=getOriginalButtonText(widgetTitle); this.style.background='#ff6b35'; this.disabled=false; },2000); },1500); }); }); }
+function initMarketSimulator(){ const canvas=document.getElementById('marketSimCanvas'); if(!canvas) return; const ctx=canvas.getContext('2d'); const addBtn=document.getElementById('simAddPoint'); const autoBtn=document.getElementById('simAutoToggle'); const statusEl=document.getElementById('simStatus'); const MAX_POINTS=60; let data=[]; let lastVal=0.55; let autoTimer=null; function addPoint(){ const drift=(Math.random()-0.5)*0.04; lastVal+=drift; if(lastVal<0.05) lastVal=0.05; if(lastVal>0.95) lastVal=0.95; data.push(lastVal); if(data.length>MAX_POINTS) data.shift(); draw(); if(statusEl) statusEl.textContent='Last update: '+ new Date().toLocaleTimeString(); } function draw(){ const w=canvas.clientWidth; const h=canvas.clientHeight; if(canvas.width!==w) canvas.width=w; if(canvas.height!==h) canvas.height=h; ctx.clearRect(0,0,w,h); if(!data.length) return; const padding=8; const innerW=w-padding*2; const innerH=h-padding*2; ctx.fillStyle='rgba(255,255,255,0.05)'; ctx.fillRect(0,0,w,h); ctx.strokeStyle='rgba(255,255,255,0.08)'; ctx.lineWidth=1; for(let g=0; g<=4; g++){ const gy=padding+innerH*g/4; ctx.beginPath(); ctx.moveTo(padding,gy); ctx.lineTo(padding+innerW,gy); ctx.stroke(); } const visible=data.slice(-MAX_POINTS); const step=innerW/(MAX_POINTS-1); ctx.beginPath(); ctx.lineWidth=2.2; ctx.strokeStyle='#ff6b35'; visible.forEach((v,i)=>{ const x=padding+i*step; const y=padding+innerH*(1-v); if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); }); ctx.stroke(); const last=visible[visible.length-1]; const lastX=padding+(visible.length-1)*step; const lastY=padding+innerH*(1-last); ctx.fillStyle='#ff6b35'; ctx.beginPath(); ctx.arc(lastX,lastY,4,0,Math.PI*2); ctx.fill(); ctx.font='10px Inter'; ctx.fillStyle='#f1f5f9'; ctx.fillText(last.toFixed(3), lastX-34,lastY-6); }
+ addBtn?.addEventListener('click', addPoint); autoBtn?.addEventListener('click',()=>{ const running=autoBtn.getAttribute('data-running')==='true'; if(running){ clearInterval(autoTimer); autoTimer=null; autoBtn.setAttribute('data-running','false'); autoBtn.textContent='Auto: Off'; } else { addPoint(); autoTimer=setInterval(addPoint,1500); autoBtn.setAttribute('data-running','true'); autoBtn.textContent='Auto: On'; } }); for(let i=0;i<20;i++) addPoint(); }
+function initPayoffCalculator(){ const priceInput=document.getElementById('payoffPrice'); const investInput=document.getElementById('payoffInvestment'); const calcBtn=document.getElementById('payoffCalcBtn'); const clearBtn=document.getElementById('payoffClearBtn'); const resultEl=document.getElementById('payoffResult'); if(!priceInput||!investInput||!calcBtn||!resultEl) return; function compute(){ const price=parseFloat(priceInput.value); const invest=parseFloat(investInput.value); if(isNaN(price)||isNaN(invest)||price<=0||price>=1||invest<=0){ resultEl.innerHTML='<span class="placeholder">Enter valid price (0-1) & amount.</span>'; return; } const shares=invest/price; const gross=shares*1; const profit=gross-invest; const roi=(profit/invest)*100; resultEl.innerHTML=`<div class="payout-line">If TRUE: Payout ₹${gross.toFixed(2)} (Profit ₹${profit.toFixed(2)})</div><span class="roi-line">Shares ${shares.toFixed(2)} | ROI ${roi.toFixed(1)}%</span>`; } calcBtn.addEventListener('click', compute); [priceInput,investInput].forEach(inp=>inp.addEventListener('keyup',e=>{ if(e.key==='Enter') compute(); })); clearBtn?.addEventListener('click',()=>{ priceInput.value=''; investInput.value=''; resultEl.innerHTML='<span class="placeholder">Enter values to see payout.</span>'; }); }
+function initOddsVisualizer(){ const slider=document.getElementById('oddsSlider'); const probVal=document.getElementById('oddsProbVal'); const priceVal=document.getElementById('oddsPriceVal'); if(!slider||!probVal||!priceVal) return; function update(){ const p=parseInt(slider.value,10)||0; const fair=p/100; probVal.textContent=p+'%'; priceVal.textContent=fair.toFixed(2); const pct=p; slider.style.background=`linear-gradient(90deg,#ff6b35 ${pct}%, rgba(255,255,255,0.15) ${pct}%)`; } slider.addEventListener('input', update); update(); }
+function getOriginalButtonText(t){ const map={ 'Price Calculator':'Use Tool','Market Tracker':'Launch Tracker','Prediction Heat Map':'View Map','Portfolio Manager':'Open Portfolio'}; return map[t]||'Use Widget'; }
+function debounce(fn,wait){ let timeout; return (...args)=>{ clearTimeout(timeout); timeout=setTimeout(()=>fn(...args), wait); }; }
+const debouncedResize=debounce(()=>{ const chart=document.getElementById('marketChart'); if(chart){ chart.width=chart.offsetWidth; chart.height=chart.offsetHeight; } },250); window.addEventListener('resize', debouncedResize);
+window.addEventListener('error', e=>console.error('JavaScript error:', e.error));
+window.addEventListener('load',()=>{ document.body.classList.add('loaded'); document.querySelectorAll('.loading').forEach(el=>el.style.display='none'); });
+function initAnalyticsVideo(){ const lazy=document.querySelector('.video-lazy'); if(!lazy) return; const customEmbed=lazy.getAttribute('data-embed-url'); const videoId=lazy.getAttribute('data-video-id'); if(!videoId) return; lazy.setAttribute('role','button'); lazy.setAttribute('tabindex','0'); lazy.setAttribute('aria-label','Play explainer video'); function activate(){ if(lazy.classList.contains('loaded')) return; const iframe=document.createElement('iframe'); iframe.className='yt-frame'; iframe.title='Prediction market explainer video'; iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; iframe.allowFullscreen=true; iframe.referrerPolicy='strict-origin-when-cross-origin'; const base=customEmbed || `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`; iframe.src=base + (base.includes('?')?'&':'?') + 'autoplay=1'; lazy.innerHTML=''; lazy.appendChild(iframe); lazy.classList.add('loaded'); } lazy.addEventListener('click', activate); lazy.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activate(); } }); }
+    </script>
+</body>
+</html>
